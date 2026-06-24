@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>爱游戏 · 资料索引与信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f7fa;
+            color: #1b2d3a;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* ---- hero ---- */
+        .hero {
+            background: linear-gradient(145deg, #0e3e4f 0%, #1b6b7a 100%);
+            padding: 72px 0 60px;
+            color: #f0fafc;
+            border-bottom: 4px solid #3eb8a0;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0,20,20,0.3);
+        }
+
+        .hero h1 span {
+            color: #b5e8d9;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 680px;
+            opacity: 0.92;
+            margin-bottom: 28px;
+            font-weight: 350;
+        }
+
+        .hero .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero .badge-group span {
+            background: rgba(255,255,255,0.10);
+            backdrop-filter: blur(4px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #def5ed;
+        }
+
+        .hero .intro-link {
+            margin-top: 8px;
+            font-size: 1.05rem;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 24px;
+            width: 100%;
+            max-width: 540px;
+        }
+
+        .hero .intro-link a {
+            color: #b5eadc;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #7ccfc0;
+            transition: border 0.2s;
+        }
+
+        .hero .intro-link a:hover {
+            border-bottom: 2px solid #e0fff0;
+            color: #e2fff3;
+        }
+
+        /* ---- section base ---- */
+        section {
+            padding: 56px 0;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #144a58;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 28px;
+            background: #2faa8e;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* ---- 优势区 / 网格卡片 ---- */
+        .grid-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 45, 50, 0.04);
+            border: 1px solid #daeaf0;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(28, 110, 98, 0.08);
+            border-color: #a3d4ca;
+        }
+
+        .card .emoji-bg {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #dbf1ec;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #0d3c48;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2b4c57;
+        }
+
+        /* ---- 说明区 / 混合排版 ---- */
+        .info-block {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 36px;
+            box-shadow: 0 4px 14px rgba(0,30,30,0.02);
+            border: 1px solid #cde1e6;
+        }
+
+        .info-block .two-cols {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px 48px;
+            margin-top: 8px;
+        }
+
+        .info-block .col {
+            flex: 1 1 240px;
+        }
+
+        .info-block .col h4 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #1a6572;
+            border-left: 4px solid #2faa8e;
+            padding-left: 14px;
+            margin-bottom: 14px;
+        }
+
+        .info-block ul {
+            list-style: none;
+        }
+
+        .info-block ul li {
+            padding: 6px 0 6px 24px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #1f4452;
+        }
+
+        .info-block ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 2px;
+            color: #2ea78c;
+            font-weight: 600;
+        }
+
+        .info-block .highlight-note {
+            margin-top: 28px;
+            background: #e4f3ef;
+            padding: 18px 24px;
+            border-radius: 20px;
+            color: #13414d;
+            font-size: 0.95rem;
+            border-left: 6px solid #289f85;
+        }
+
+        .info-block .highlight-note a {
+            color: #0d6b5f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #3bbaa0;
+        }
+
+        /* ---- FAQ 摘要 (紧凑) ---- */
+        .faq-summary {
+            background: #e5f0f3;
+            border-radius: 28px;
+            padding: 28px 32px;
+            margin-top: 8px;
+        }
+
+        .faq-summary .faq-item {
+            border-bottom: 1px solid #c1d8dd;
+            padding: 16px 0;
+        }
+
+        .faq-summary .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #0d4957;
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+        }
+
+        .faq-item .q::before {
+            content: 'Q';
+            background: #2a9c84;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            flex-shrink: 0;
+        }
+
+        .faq-item .a {
+            margin-top: 6px;
+            padding-left: 32px;
+            font-size: 0.9rem;
+            color: #1d4c58;
+        }
+
+        .faq-item .a a {
+            color: #0d7565;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-more-hint {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: #1b5663;
+            text-align: right;
+            border-top: 1px dashed #b6d3d9;
+            padding-top: 14px;
+        }
+
+        /* ---- 底部链接 ---- */
+        .footer-links {
+            background: #e1ecef;
+            padding: 36px 0;
+            margin-top: auto;
+            border-top: 2px solid #bdd7db;
+        }
+
+        .footer-links .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-links .info-text {
+            font-size: 0.9rem;
+            color: #1f4e59;
+        }
+
+        .footer-links .info-text a {
+            color: #0b6a5d;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #5cbaa5;
+        }
+
+        .footer-links .info-text a:hover {
+            color: #053f37;
+            border-bottom: 2px solid #1d8572;
+        }
+
+        .footer-links .meta {
+            font-size: 0.8rem;
+            color: #37636d;
+            text-align: right;
+        }
+
+        /* ---- 响应式 ---- */
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .info-block {
+                padding: 24px 18px;
+            }
+            .faq-summary {
+                padding: 20px 18px;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .grid-card {
+                grid-template-columns: 1fr;
+            }
+            .footer-links .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero .badge-group span {
+                font-size: 0.8rem;
+                padding: 4px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero 区 -->
+    <header class="hero">
+        <div class="container">
+            <h1><span>爱游戏</span> · 信息索引库</h1>
+            <p>围绕游戏资料、版本记录、机制说明与活动整理，提供结构化的内容索引。适合查阅者快速定位所需信息。</p>
+            <div class="badge-group">
+                <span>📁 资料归档</span>
+                <span>📋 版本对照</span>
+                <span>🔍 机制说明</span>
+                <span>📅 活动整理</span>
+            </div>
+            <div class="intro-link">
+                以 <a href="https://online-index-igame.com">爱游戏</a> 为基础索引节点，覆盖多个维度的信息条目。
+            </div>
+        </div>
+    </header>
+
+    <!-- 优势区 (信息密度) -->
+    <section>
+        <div class="container">
+            <div class="section-title">索引结构特点</div>
+            <div class="grid-card">
+                <div class="card">
+                    <div class="emoji-bg">📌</div>
+                    <h3>分类路径清晰</h3>
+                    <p>按系统、版本、活动类型划分目录，减少重复查找，每项内容附带来源参考。</p>
+                </div>
+                <div class="card">
+                    <div class="emoji-bg">📎</div>
+                    <h3>版本变更记录</h3>
+                    <p>汇总各版本的更新摘要、数值调整与界面变动，便于对比和回溯。</p>
+                </div>
+                <div class="card">
+                    <div class="emoji-bg">🧩</div>
+                    <h3>机制说明</h3>
+                    <p>对游戏内常见系统（匹配、计分、奖励结构）提供简明文字解释，降低理解门槛。</p>
+                </div>
+                <div class="card">
+                    <div class="emoji-bg">🗂️</div>
+                    <h3>活动归档</h3>
+                    <p>历史活动时间线、奖励一览及条件摘要，适合查阅过往内容或参考复刻信息。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区 (信息索引角度) -->
+    <section>
+        <div class="container">
+            <div class="info-block">
+                <div class="section-title">从资料整理到索引</div>
+                <p style="margin-bottom: 20px;">信息索引的核心是结构化和可复现。站点内容围绕“检索效率”进行组织：</p>
+                <div class="two-cols">
+                    <div class="col">
+                        <h4>索引方法</h4>
+                        <ul>
+                            <li>按模块建立独立页面，避免内容混杂</li>
+                            <li>关键名词保留标签化表述，支持快速定位</li>
+                            <li>版本号、日期等元数据前置显示</li>
+                            <li>使用层级标题与列表，减少长段落</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>内容来源</h4>
+                        <ul>
+                            <li>游戏内公开信息与公告整理</li>
+                            <li>社群验证的机制汇总</li>
+                            <li>版本更新日志结构化</li>
+                            <li>标注参考时间与出处</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight-note">
+                    ⚡ 基于 <a href="https://online-index-igame.com">爱游戏</a> 索引站，你可以快速筛选特定模块、版本或活动类型。所有条目均保留原始描述，不添加臆测内容。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <div class="container">
+            <div class="section-title">常见索引问题</div>
+            <div class="faq-summary">
+                <div class="faq-item">
+                    <div class="q">如何查找某个版本的详细改动？</div>
+                    <div class="a">在索引站选择「版本记录」分类，按版本号或时间排序即可。每个版本条目包含改动列表与参考链接。<a href="https://online-index-igame.com">爱游戏</a> 索引中同样收录了对应条目。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">活动信息是否包含往期内容？</div>
+                    <div class="a">是的，活动归档涵盖已结束的活动，包括起止时间、奖励范围及简要条件，便于回顾或对比。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="q">索引条目会保持更新吗？</div>
+                    <div class="a">会依据公开信息进行补充和修正，每次调整会标注日期。当前维护周期为每两至三周一轮。</div>
+                </div>
+                <div class="faq-more-hint">
+                    更多条目可参考站内分类 · 所有索引均指向 <a href="https://online-index-igame.com">爱游戏</a> 主站
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="footer-links">
+        <div class="container">
+            <div class="info-text">
+                <a href="https://online-index-igame.com">爱游戏</a> · 信息索引目录 · 基于公开资料整理
+            </div>
+            <div class="meta">
+                索引结构 v2 · 内容仅供参考
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
