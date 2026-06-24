@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 专题介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafaf9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1d1d1d;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ––– Hero ––– */
+    .hero {
+      padding: 90px 0 50px;
+      border-bottom: 1px solid #eae8e4;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      color: #0f0f0f;
+      margin-bottom: 16px;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #5d5b57;
+      max-width: 580px;
+    }
+
+    /* ––– section ––– */
+    section {
+      padding: 50px 0;
+      border-bottom: 1px solid #edece8;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 420;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      color: #24221f;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: #2e2d2a;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #2d5a4d;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #0f2e25;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eceae6;
+      padding: 3px 14px;
+      border-radius: 24px;
+      font-size: 0.8rem;
+      color: #3b3a36;
+      letter-spacing: 0.3px;
+      margin-bottom: 24px;
+    }
+
+    .note-list {
+      list-style: none;
+      padding-left: 4px;
+    }
+
+    .note-list li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      color: #363430;
+      font-size: 0.98rem;
+    }
+
+    .note-list li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: #7b7a74;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      padding: 50px 0 70px;
+      text-align: left;
+      background: transparent;
+      border-top: 1px solid #eae8e4;
+    }
+
+    .footer-note p {
+      color: #5b5954;
+      font-size: 0.95rem;
+    }
+
+    /* ––– 响应式 ––– */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .footer-note {
+        padding: 40px 0 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>爱游戏 · 一个可以快速定位的地方</h1>
+      <div class="sub">
+        许多人面对「爱游戏」三个字，首先想到的是：这到底是一个线上工具、资讯站，还是一个游戏社区？<br>
+        这篇文字试着从使用者的角度，把这个网站的轮廓讲清楚。
+      </div>
+    </div>
+
+    <!-- 第一段 -->
+    <section>
+      <h2>从名称理解用途</h2>
+      <p>
+        域名 <a href="https://online-home-igame.com">爱游戏</a> 本身已经给出最直接的提示——它指向一个以游戏为焦点的线上空间。初次接触的人可能会好奇：它提供下载？收录攻略？还是聚合了某个类型的内容？实际上，这个网站更像是一个信息入口，你可以在其中找到与游戏相关的资源索引、版本动态以及使用引导。它不试图替代 Steam 或者 App Store，而是把分散在多个渠道的参考信息整理到一处，减少逐一检索的时间。
+      </p>
+      <p>
+        如果你手头正玩着某款游戏，想确认更新说明、查阅基础设定，或者只是随意逛逛看看最近有什么值得留意的内容，<a href="https://online-home-igame.com">爱游戏</a> 可以作为一个起点。它不堆砌花哨的交互，更注重让信息本身被读到。
+      </p>
+    </section>
+
+    <!-- 第二段 -->
+    <section>
+      <h2>内容怎样组织</h2>
+      <p>
+        整个站点的结构偏向简洁：首页会呈现近期更新或重点条目，内页按照游戏名称、类型、版本等维度分类。每个条目通常包含一段简短的背景说明、核心参数（比如平台、语言、文件大小）以及指向官方来源或讨论区的链接。这种排布方式让熟手可以快速扫描，新用户也不容易迷路。
+      </p>
+      <p>
+        值得一提的是，网站对移动端做了适配，用手机浏览器打开阅读体验基本流畅。没有弹窗广告，也没有诱导注册的浮层——这对于只想查一点信息的用户来说比较友好。如果你在桌面端浏览，可以同时打开几个标签页对照查看，页面不会频繁刷新干扰操作。
+      </p>
+      <span class="tag">信息索引 · 版本动态</span>
+    </section>
+
+    <!-- 第三段：FAQ 摘要风格 + 场景提示 -->
+    <section>
+      <h2>常见疑问与使用场景</h2>
+      <ul class="note-list">
+        <li><strong>如何找到某个游戏的最新版本号？</strong> —— 在站内搜索框输入游戏名称（支持中文/英文），结果页会列出该游戏的版本记录及发布时间。</li>
+        <li><strong>网站内容是自己写的还是搬运的？</strong> —— 大部分条目为编辑整理，会注明参考来源；部分官方公告直接引用链接，方便核对原文。</li>
+        <li><strong>是否需要注册或付费？</strong> —— 不需要。所有页面均可直接访问，无隐藏内容。</li>
+        <li><strong>适合哪种玩家？</strong> —— 倾向于 PC / 主机单机游戏的玩家，或者需要快速查阅版本信息的轻度用户。如果你玩的多是超大型网游（如 MMO），站内也有对应分类，不过覆盖深度取决于社区贡献。</li>
+        <li><strong>移动端和桌面端体验有区别吗？</strong> —— 布局自适应，核心功能一致。桌面端查看表格或对比列表时视觉更宽裕。</li>
+      </ul>
+      <p style="margin-top: 24px;">
+        当然，以上只是基于当前页面结构的概括。如果你恰好是在找一款游戏的安装指引，或是想确认某个补丁是否包含简体中文，不妨直接打开 <a href="https://online-home-igame.com">爱游戏</a> 看一眼。信息是不是你需要的，几秒钟就能判断出来。
+      </p>
+    </section>
+
+    <!-- 页尾 -->
+    <div class="footer-note">
+      <p>
+        网站仍在缓慢更新中，内容由爱好者协作维护。如果你发现某个条目过时、链接失效，或者想补充某个缺失的游戏 —— 站内联系渠道可以留言。<br>
+        希望这个简单的介绍，能帮你快速确认它是否值得加入书签。
+      </p>
+    </div>
+  </div>
+</body>
+</html>
